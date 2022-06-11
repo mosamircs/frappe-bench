@@ -1,0 +1,35 @@
+Traceback (most recent call last):
+  File "apps/frappe/frappe/desk/page/setup_wizard/setup_wizard.py", line 76, in setup_complete
+    task.get("fn")(task.get("args"))
+  File "apps/frappe/frappe/desk/page/setup_wizard/setup_wizard.py", line 94, in update_global_settings
+    update_user_name(args)
+  File "apps/frappe/frappe/desk/page/setup_wizard/setup_wizard.py", line 189, in update_user_name
+    doc.insert()
+  File "apps/frappe/frappe/model/document.py", line 261, in insert
+    self.run_before_save_methods()
+  File "apps/frappe/frappe/model/document.py", line 1052, in run_before_save_methods
+    self.run_method("validate")
+  File "apps/frappe/frappe/model/document.py", line 941, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "apps/frappe/frappe/model/document.py", line 1260, in composer
+    return composed(self, method, *args, **kwargs)
+  File "apps/frappe/frappe/model/document.py", line 1242, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "apps/frappe/frappe/model/document.py", line 938, in fn
+    return method_object(*args, **kwargs)
+  File "apps/frappe/frappe/core/doctype/user/user.py", line 77, in validate
+    self.validate_email_type(self.email)
+  File "apps/frappe/frappe/core/doctype/user/user.py", line 440, in validate_email_type
+    validate_email_address(email.strip(), True)
+  File "apps/frappe/frappe/utils/__init__.py", line 180, in validate_email_address
+    email = _check(e.strip())
+  File "apps/frappe/frappe/utils/__init__.py", line 170, in _check
+    frappe.throw(
+  File "apps/frappe/frappe/__init__.py", line 504, in throw
+    msgprint(
+  File "apps/frappe/frappe/__init__.py", line 479, in msgprint
+    _raise_exception()
+  File "apps/frappe/frappe/__init__.py", line 434, in _raise_exception
+    raise raise_exception(msg)
+frappe.exceptions.InvalidEmailAddressError: m@2022 is not a valid Email Address
+{"language": "English (United States)", "country": "Egypt", "timezone": "Africa/Cairo", "currency": "EGP", "full_name": "mohamed", "email": "m@2022", "password": "m@2022", "domains": ["Healthcare", "Services"], "company_name": "dorretelmona", "company_abbr": "D", "company_tagline": "sico", "bank_account": "biko", "chart_of_accounts": "Standard", "fy_start_date": "2021-07-01", "fy_end_date": "2022-06-30", "name": "m@2022"}
